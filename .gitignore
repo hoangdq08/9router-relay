@@ -1,0 +1,10 @@
+/bin/
+*.log
+.env
+.env.*
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+.DS_Store
