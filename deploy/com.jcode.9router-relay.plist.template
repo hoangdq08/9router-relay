@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Replace BIN_PATH and HOME_DIR with absolute paths before loading. -->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.jcode.9router-relay</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>BIN_PATH</string>
+        <string>-listen</string>
+        <string>127.0.0.1:20129</string>
+        <string>-upstream</string>
+        <string>161.248.239.201:20128</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>ThrottleInterval</key>
+    <integer>5</integer>
+    <key>StandardOutPath</key>
+    <string>HOME_DIR/.jcode/logs/9router-relay.log</string>
+    <key>StandardErrorPath</key>
+    <string>HOME_DIR/.jcode/logs/9router-relay-error.log</string>
+</dict>
+</plist>
