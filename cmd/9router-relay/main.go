@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/hoangdodev/9router-relay/internal/relay"
+	"github.com/hoangdq08/9router-relay/internal/relay"
 )
 
 var version = "dev"

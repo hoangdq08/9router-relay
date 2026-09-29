@@ -1,3 +1,3 @@
-module github.com/hoangdodev/9router-relay
+module github.com/hoangdq08/9router-relay
 
 go 1.22
