@@ -34,7 +34,7 @@ func parseFlags(args []string) (*config, error) {
 	fs := flag.NewFlagSet("9router-relay", flag.ContinueOnError)
 	cfg := &config{}
 	fs.StringVar(&cfg.listenAddr, "listen", envOrDefault("ROUTER_RELAY_LISTEN_ADDR", "127.0.0.1:20129"), "local TCP listen address")
-	fs.StringVar(&cfg.upstreamAddr, "upstream", envOrDefault("ROUTER_RELAY_UPSTREAM_ADDR", "UPSTREAM_HOST:20128"), "upstream TCP address")
+	fs.StringVar(&cfg.upstreamAddr, "upstream", envOrDefault("ROUTER_RELAY_UPSTREAM_ADDR", ""), "upstream TCP address (required), e.g. upstream.example.com:20128")
 	fs.DurationVar(&cfg.dialTimeout, "dial-timeout", 10*time.Second, "upstream connection timeout")
 	fs.BoolVar(&cfg.verbose, "v", false, "enable debug logging")
 	fs.BoolVar(&cfg.showVersion, "version", false, "print version and exit")

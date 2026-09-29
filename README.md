@@ -21,7 +21,7 @@ go build -o bin/9router-relay ./cmd/9router-relay
 ```sh
 ./bin/9router-relay \
   -listen 127.0.0.1:20129 \
-  -upstream UPSTREAM_HOST:20128
+  -upstream <upstream-host>:20128
 ```
 
 Defaults match the existing local Python relay. Do not run both implementations on port `20129` at the same time. For a non-disruptive test, use another local port:
@@ -36,7 +36,7 @@ Flags take precedence over environment variables:
 | Setting | Flag | Environment variable | Default |
 | --- | --- | --- | --- |
 | Listen address | `-listen` | `ROUTER_RELAY_LISTEN_ADDR` | `127.0.0.1:20129` |
-| Upstream address | `-upstream` | `ROUTER_RELAY_UPSTREAM_ADDR` | `UPSTREAM_HOST:20128` |
+| Upstream address | `-upstream` | `ROUTER_RELAY_UPSTREAM_ADDR` | none (required) |
 | Dial timeout | `-dial-timeout` | none | `10s` |
 | Debug logging | `-v` | none | disabled |
 
@@ -50,7 +50,7 @@ SIGINT and SIGTERM close the listener and active connections, then wait for hand
 
 ## macOS LaunchAgent
 
-`deploy/com.jcode.9router-relay.plist.template` uses the same LaunchAgent label as the existing Python relay. Replace `BIN_PATH` and `HOME_DIR` with absolute paths. `launchd` does not expand `~` or `$HOME` inside a plist.
+`deploy/com.jcode.9router-relay.plist.template` uses the same LaunchAgent label as the existing Python relay. Replace `BIN_PATH` and `HOME_DIR` with absolute paths, and `UPSTREAM_ADDR` with your upstream `host:port`. `launchd` does not expand `~` or `$HOME` inside a plist.
 
 Before switching:
 

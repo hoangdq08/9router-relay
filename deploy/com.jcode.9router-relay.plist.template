@@ -11,7 +11,7 @@
         <string>-listen</string>
         <string>127.0.0.1:20129</string>
         <string>-upstream</string>
-        <string>UPSTREAM_HOST:20128</string>
+        <string>UPSTREAM_ADDR</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
